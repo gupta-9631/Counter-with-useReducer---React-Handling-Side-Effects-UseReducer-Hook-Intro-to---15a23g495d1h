@@ -1,5 +1,15 @@
-const counterReducer = (state,action) =>{
+import { INCREMENT, DECREMENT } from "../components/action.type";
 
-}
+const counterReducer = (state, action) => {
+  switch (action.type) {
+    case INCREMENT:
+      return { count: state.count + 1 };
+    case DECREMENT:
+      return { count: state.count - 1 };
 
-export {counterReducer}
+    default:
+      return state;
+  }
+};
+
+export { counterReducer };
